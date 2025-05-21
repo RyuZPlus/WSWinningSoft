@@ -7,24 +7,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sfwonsoft.officialwebsite.dtos.GameDTO;
+import com.sfwonsoft.officialwebsite.models.dtos.GameDTO;
 import com.sfwonsoft.officialwebsite.models.Game;
 import com.sfwonsoft.officialwebsite.repositories.GameRepository;
+import com.sfwonsoft.officialwebsite.services.GameServices;
 
 @RestController
 @RequestMapping("/api")
 public class GameController {
 	@Autowired
-    private GameRepository gameRepository;
+    private GameServices gameServices;
 
 	//@RequestMapping(path = "api/games", method = RequestMethod.GET)
-	@GetMapping("api/games")
+	@GetMapping("/games")
     public List<Game> listGames() {
-        return gameRepository.listGames();
+        return gameServices.getListGames();
     }
 	
-	@GetMapping("api/gamesDto")
+	@GetMapping("/gamesDto")
     public List<GameDTO> listGamesDTO() {
-        return gameRepository.listGamesDTO();
+        return gameServices.listGamesDTO();
     }
 }
