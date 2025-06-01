@@ -13,7 +13,7 @@ import com.sfwonsoft.officialwebsite.repositories.GameManagerRepository;
 import com.sfwonsoft.officialwebsite.repositories.GameRepository;
 
 @Service
-public class GameServices {
+public class GameService {
 
     @Autowired
     private GameManagerRepository gameManagerRepository;

@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sfwonsoft.officialwebsite.models.dtos.GameDTO;
 import com.sfwonsoft.officialwebsite.models.dtos.GameFeaturedProjection;
 import com.sfwonsoft.officialwebsite.models.Game;
-import com.sfwonsoft.officialwebsite.services.GameServices;
+import com.sfwonsoft.officialwebsite.services.GameService;
 
 @RestController
 @RequestMapping("/api")
 public class GameController {
 	@Autowired
-    private GameServices gameServices;
+    private GameService gameServices;
 
 	//@RequestMapping(path = "api/games", method = RequestMethod.GET)
 	@GetMapping("/games")

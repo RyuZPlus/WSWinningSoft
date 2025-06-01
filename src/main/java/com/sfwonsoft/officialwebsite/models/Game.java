@@ -23,12 +23,7 @@ import lombok.Data;
 	        parameters = {
 	            @jakarta.persistence.StoredProcedureParameter(mode = jakarta.persistence.ParameterMode.IN, name = "GameId", type = Integer.class)
 	        }
-	    ),
-	@NamedStoredProcedureQuery(
-		    name = "Game.getFeaturedGame",
-		    procedureName = "sp_get_featured_game",
-		    resultClasses = Game.class
-		)
+	    )
 })
 @Data
 public class Game {
