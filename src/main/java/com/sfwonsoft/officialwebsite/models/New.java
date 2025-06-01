@@ -15,6 +15,9 @@ import lombok.Data;
 	@NamedStoredProcedureQuery(
 	        name = "New.listNews",
 	        procedureName = "sp_list_news",
+	        parameters = {
+	        		@jakarta.persistence.StoredProcedureParameter(mode = jakarta.persistence.ParameterMode.IN, name = "game_id", type = Integer.class)
+	        },
 	        resultClasses = New.class
 	    )
 })

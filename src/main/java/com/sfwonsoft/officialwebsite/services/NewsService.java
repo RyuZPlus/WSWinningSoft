@@ -13,7 +13,7 @@ public class NewsService {
 	@Autowired
 	private NewsManagerRepository newsManagerRepository;
 	
-	public List<New> getLatestNews() {
-        return newsManagerRepository.listNews(6);
+	public List<New> getLatestNews(Integer gameId) {
+        return newsManagerRepository.listNews(gameId, 6);
     }
 }

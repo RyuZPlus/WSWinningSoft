@@ -14,8 +14,15 @@ import jakarta.persistence.StoredProcedureQuery;
 public class NewsManagerRepository {
 	@PersistenceContext
     private EntityManager entityManager;
-	public List<New> listNews(int limit) {
+	public List<New> listNews(Integer gameId, int limit) {
         StoredProcedureQuery query = entityManager.createNamedStoredProcedureQuery("New.listNews");
+        
+        if (gameId != null) {
+            query.setParameter("game_id", gameId);
+        } else {
+            query.setParameter("game_id", null);
+        }
+        
         List<New> result = query.getResultList();
         return result.stream().limit(limit).toList();
     }
